@@ -28,7 +28,7 @@
 
 ## BinFKSetting
 ### BinFK
-### BinHand (notyet
+### BinHand (not yet)
 
 ## BinIKFKSwith
 ### FKtoIK
