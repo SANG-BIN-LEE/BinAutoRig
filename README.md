@@ -11,28 +11,29 @@
 
 ##### this is all the class command. and all the class has 'help' def. so you can easly find quick command with class.help() command.
 
-# BinController
-## circle_CTL
-## cube_CTL
-## dia_CTL
-## halfdia_CTL
-## hand_CTL
-## loc_CTL
-## circleFront_CTL
 
-# BinIKSetting
-## ikPVT
-## ikRPSet
-## ikSpline (not yet)
+## BinController
+### circle_CTL
+### cube_CTL
+### dia_CTL
+### halfdia_CTL
+### hand_CTL
+### loc_CTL
+### circleFront_CTL
 
-# BinFKSetting
-## BinFK
-## BinHand (notyet
+## BinIKSetting
+### ikPVT
+### ikRPSet
+### ikSpline (not yet)
 
-# BinIKFKSwith
-## FKtoIK
-## IKtoFK
+## BinFKSetting
+### BinFK
+### BinHand (notyet
 
-# BinJoint
-## duplicate
-## MirrorYZ
+## BinIKFKSwith
+### FKtoIK
+### IKtoFK
+
+## BinJoint
+### duplicate
+### MirrorYZ
