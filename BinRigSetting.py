@@ -307,9 +307,11 @@ class BinIKFKSwitch():
         pass
     def FKtoIK(self, FKJoints, PV_CTL, IKRP_CTL):
         tx, ty, tz = BinIK.ikPVT(ikList=FKJoints)
-        mc.setAttr(PV_CTL+'.tx', tx)
-        mc.setAttr(PV_CTL+'.ty', ty)
-        mc.setAttr(PV_CTL+'.tz', tz)
+        mc.group(em=1, n='temp')
+        mc.setAttr('temp.tx', tx)
+        mc.setAttr('temp.ty', ty)
+        mc.setAttr('temp.tz', tz)
+        mc.matchTransform('temp', PV_CTL, rot=0, scl=0)
         mc.matchTransform(IKRP_CTL, FKJoints[2])
     def IKtoFK(self, IKJoints, FK_CTLs):
         mc.matchTransform(FK_CTLs[0], IKJoints[0])
