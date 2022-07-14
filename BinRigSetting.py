@@ -359,8 +359,7 @@ class BinJoint():
         for x in child:
             if Pa[x]:
                 mc.parent(x, Pa[x])
-
-    def MirrorYZ(self, j=mc.ls(sl=1, type='joint'), org='_l', mod='_r', flip = True):
+    def MirrorYZ(self, j=mc.ls(sl=1, type='joint'), org='_l', mod='_r', flip = True, xflip = True):
         if j == []:
             mc.error('please select joint')
             return
@@ -418,6 +417,8 @@ class BinJoint():
                 tx = mt[12]
                 mt[0] = -1*vx1
                 mt[12] = -1*tx
+            if xflip == False:
+                vx1 = -vx1
                 
             mc.createNode('decomposeMatrix', n='temp')
             mc.setAttr('temp.inputMatrix', mt, type='matrix')
