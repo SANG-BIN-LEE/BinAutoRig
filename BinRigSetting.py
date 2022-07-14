@@ -363,13 +363,11 @@ class BinJoint():
         if j == []:
             mc.error('please select joint')
             return
+        
         #list Hierarchy
-        Joints = []
-        for x in j:
-            lR = mc.listRelatives(x, ad=1)
-            for y in lR:
-                Joints.append(y)
-            Joints.append(x)
+        mc.select(j, hi=1)
+        Joints = mc.ls(sl=1,type='joint')
+        mc.select(cl=1)
 
         #save ParentTree
         child = Joints
