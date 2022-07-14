@@ -2,6 +2,7 @@ import maya.cmds as mc
 import math as math
 # this is 100% made and copyrighted by korean SANG BIN LEE
 # I'm finding a job now(2022/07). Rigging TA / CFX Artist / Character TD is good for me.
+# my github : https://github.com/SANG-BIN-LEE
 # my linkedin : https://www.linkedin.com/in/sangbin-lee-981a7215a
 # my youtube : https://www.youtube.com/playlist?list=PLKIoBfXktlaalLuyrsqxT3QgzhQ-08yeE
 # maintenance work is needed, yet.
