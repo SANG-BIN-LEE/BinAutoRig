@@ -416,7 +416,7 @@ class BinJoint():
                 mt[0] = -1*vx1
                 mt[12] = -1*tx
             if xflip == False:
-                vx1 = -vx1
+                mt[0] = vx1
                 
             mc.createNode('decomposeMatrix', n='temp')
             mc.setAttr('temp.inputMatrix', mt, type='matrix')
