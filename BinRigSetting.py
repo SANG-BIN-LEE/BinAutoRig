@@ -70,7 +70,7 @@ class BinController():
         loc_CTL(n=name, s=scale, c=color)
         all returns name
         """)
-
+BinCTL = BinController()
 class BinIKSetting():
     def __init__(self):
         pass
@@ -204,7 +204,7 @@ class BinIKSetting():
         ikRPSet(n=stringName, s=3 scale) -needed PVT first, color is fixed
         ikSpline(j=joints, d=3 degree, n=name)
         """ )
-
+BinIK = BinIKSetting()
 class BinFKSetting():
     def __init__(self):
         pass
@@ -301,7 +301,7 @@ class BinFKSetting():
         print("""
         BinFK : fkList = jointList, M=master, MS=MasterShape, N=null, NS=NullShape, s=controllerscale, c=color
         """)
-
+BinFK = BinFKSetting()
 class BinIKFKSwitch():
     def __init__(self):
         pass
@@ -320,16 +320,16 @@ class BinIKFKSwitch():
         FKtoIK = FKJoints, PV_CTL, IKRP_CTL
         IKtoFK = IKJoints, FK_CTLs
         """)
-
+BinSwitch = BinIKFKSwitch()
 class BinJoint():
     def __init__(self):
         pass
-    def duplicate(self, j=mc.ls(sl=1,type='joint'), pre='', suf='', org='', mod=''):
-        if j == []:
+    def duplicate(self, Joint=mc.ls(sl=1,type='joint'), pre='', suf='', org='', mod=''):
+        if Joint == []:
             mc.error('please select one joint')
             return
         #list Hierarchy
-        mc.select(j, hi=1)
+        mc.select(Joint, hi=1)
         Joints = mc.ls(sl=1,type='joint')
         mc.select(cl=1)
 
@@ -359,13 +359,13 @@ class BinJoint():
         for x in child:
             if Pa[x]:
                 mc.parent(x, Pa[x])
-    def MirrorYZ(self, j=mc.ls(sl=1, type='joint'), org='_l', mod='_r', flip = True, xflip = True):
-        if j == []:
+    def MirrorYZ(self, Joint=mc.ls(sl=1, type='joint'), org='_l', mod='_r', flip = True, xflip = True):
+        if Joint == []:
             mc.error('please select joint')
             return
         
         #list Hierarchy
-        mc.select(j, hi=1)
+        mc.select(Joint, hi=1)
         Joints = mc.ls(sl=1,type='joint')
         mc.select(cl=1)
 
@@ -416,7 +416,7 @@ class BinJoint():
                 mt[0] = -1*vx1
                 mt[12] = -1*tx
             if xflip == False:
-                mt[0] = vx1
+                vx1 = -vx1
                 
             mc.createNode('decomposeMatrix', n='temp')
             mc.setAttr('temp.inputMatrix', mt, type='matrix')
@@ -436,6 +436,7 @@ class BinJoint():
                 mc.parent(x, Pa[x])
     def help(self):
         print("""
-        def duplicate(self, j=mc.ls(sl=1,type='joint'), pre='', suf='', org='', mod='')
-        MirrorYZ(self, j=mc.ls(sl=1, type='joint'), org='_l', mod='_r', flip = True)    
+        def duplicate(self, Joint=mc.ls(sl=1,type='joint'), pre='', suf='', org='', mod='')
+        MirrorYZ(self, Joint=mc.ls(sl=1, type='joint'), org='_l', mod='_r', flip = True)    
         """)
+BinJoint = BinJoint()
