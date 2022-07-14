@@ -311,7 +311,7 @@ class BinIKFKSwitch():
         mc.setAttr('temp.tx', tx)
         mc.setAttr('temp.ty', ty)
         mc.setAttr('temp.tz', tz)
-        mc.matchTransform('temp', PV_CTL, rot=0, scl=0)
+        mc.matchTransform(PV_CTL, 'temp', rot=0, scl=0)
         mc.matchTransform(IKRP_CTL, FKJoints[2])
         mc.delete('temp')
     def IKtoFK(self, IKJoints, FK_CTLs):
