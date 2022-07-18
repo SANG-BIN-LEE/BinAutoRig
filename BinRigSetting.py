@@ -423,8 +423,8 @@ class BinJoint():
                 vz1 = mt[8]
                 vz2 = mt[9]
                 vz3 = mt[10]
-                mt[0] = vx1
-                mt[12] = -1*tx
+                mt[0] = -vx1
+                mt[12] = -tx
                 mt[4] = -vy1
                 mt[5] = vy2
                 mt[6] = vy3
