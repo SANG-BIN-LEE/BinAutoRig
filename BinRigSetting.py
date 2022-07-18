@@ -408,17 +408,29 @@ class BinJoint():
                 vz3 = mt[10]
                 mt[0] = -1*vx1
                 mt[12] = -1*tx
-                mt[4] = -1*vy1
+                mt[4] = vy1
                 mt[5] = -1*vy2
                 mt[6] = -1*vy3
-                mt[8] = -1*vz1
+                mt[8] = vz1
                 mt[9] = -1*vz2
                 mt[10] = -1*vz3
-            if flip == False:
+            else:
                 vx1 = mt[0]
                 tx = mt[12]
-                mt[0] = -1*vx1
+                vy1 = mt[4]
+                vy2 = mt[5]
+                vy3 = mt[6]
+                vz1 = mt[8]
+                vz2 = mt[9]
+                vz3 = mt[10]
+                mt[0] = vx1
                 mt[12] = -1*tx
+                mt[4] = -vy1
+                mt[5] = vy2
+                mt[6] = vy3
+                mt[8] = -vz1
+                mt[9] = vz2
+                mt[10] = vz3
             if xflip == False:
                 mt[0] = vx1
                 
